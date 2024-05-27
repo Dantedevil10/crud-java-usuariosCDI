@@ -10,24 +10,21 @@ import lombok.Data;
 @Data
 @Entity
 
-public class Games {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(length = 30,nullable = false)
-    private String nomedojogo;
+    @Column(length = 15,nullable = false)
+    private String username;
 
-    @Column(length = 150)
-    private String imagem;
-
-    @Column(nullable = false)
-    private String sumario;
+    @Column(length = 11)
+    private String cpf;
 
     @Column(nullable = false)
-    private String plataforma;
+    private String email;
 
-    @Column(nullable = false)
-    private int anodelancamento;
+    @Column(length = 10,nullable = false)
+    private String datanascimento;
     
 }

@@ -5,8 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.danted.model.Games;
-import com.danted.repository.GamesRepository;
+import com.danted.model.Users;
+import com.danted.repository.UsersRepository;
 
 @SpringBootApplication
 public class CrudSpringApplication {
@@ -16,17 +16,17 @@ public class CrudSpringApplication {
 	}
 
 	@Bean
-	CommandLineRunner initDatabase(GamesRepository gamesrepository){
+	CommandLineRunner initDatabase(UsersRepository gamesrepository){
 		return args -> {
 			gamesrepository.deleteAll();
 
-			Games g = new Games();
-			g.setNomedojogo("God Of War");
-			g.setPlataforma("Ps2");
-			g.setAnodelancamento(2005);
-			g.setSumario("FODASE");
+			Users u = new Users();
+			u.setUsername("Carlin");
+			u.setCpf("14365278911");
+			u.setEmail("carlinpassaorodo2020@gmail.com");
+			u.setDatanascimento("11/07/2000");
 
-			gamesrepository.save(g);
+			gamesrepository.save(u);
 		};
 	}
 
