@@ -15,19 +15,4 @@ public class CrudSpringApplication {
 		SpringApplication.run(CrudSpringApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner initDatabase(UsersRepository gamesrepository){
-		return args -> {
-			gamesrepository.deleteAll();
-
-			Users u = new Users();
-			u.setUsername("Carlin");
-			u.setCpf("14365278911");
-			u.setEmail("carlinpassaorodo2020@gmail.com");
-			u.setDatanascimento("11/07/2000");
-
-			gamesrepository.save(u);
-		};
-	}
-
 }

@@ -9,10 +9,10 @@ import lombok.Data;
 
 @Data
 @Entity
-
 public class Users {
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(length = 15,nullable = false)
